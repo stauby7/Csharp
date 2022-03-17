@@ -1,10 +1,9 @@
 ﻿using System;
+namespace CsharpConsle{
 class Program {
 
   
-  namespace CsharpConsle
 
-    {
         static void Main(string[] args)
         {
             bool Menu = true;
@@ -16,13 +15,16 @@ class Program {
     
         private static bool TheMenu()
         {
+            Console.WriteLine("Press enter to continue...");
+            Console.ReadLine();
+
             Console.Clear();
             Console.WriteLine("Pick something to do:");
             Console.WriteLine("Option 1: Tell me your name.");
             Console.WriteLine("Option 2: Watch me do some Math.");
             Console.WriteLine("Option 3: Watch me do some cooler Math");
             Console.WriteLine("Option 4: Do some reading with me.");
-            Console.WriteLine("Option 5: Leave the program");
+            Console.WriteLine("Option 5: Get outta here.");
             Console.WriteLine("\r\nSelect an option: ");
 
             switch(Console.ReadLine())
@@ -30,74 +32,68 @@ class Program {
                 case "1":
                     YaBoiName();
                     return true;
-                    break;
                 case "2":
                     RectangleMath();
                     return true;
-                    break;
                 case "3":
                     GasForLess();
                     return true;
-                    break;
                 case "4":
                     AliceRead();
                     return true;
-                    break;
                 case "5":
                     return false;
-                    break;
                 default:
                     return true;
-                    break;
             }
         }
-    }
-
-namespace CsharpConsle
-
-  {
     private static void YaBoiName()
     {
-      Console.Writeline("What is your name?");
+      Console.WriteLine("What is your name?");
 
-      Console.Writeline("It's ya boi, um,", Console.Readline());
+      string name = Console.ReadLine();
+
+      Console.WriteLine("It's ya boi, um, " + name);
+
     }
-  }
 
-namespace CsharpConsle
 
-  {
+
     private static void RectangleMath()
+     {
+       Console.WriteLine("What is the length of your rectangle?");
+      
+      int length = Convert.ToInt32(Console.ReadLine());
+
+
+      Console.WriteLine("What is the width of your rectangle?");
+
+      int width = Convert.ToInt32(Console.ReadLine());
+
+       int area = length * width;
+
+       Console.WriteLine("Tada, here is you area: " + area);
+     }
+
+
+
+     private static void GasForLess()
     {
-      int length = Console.Readline("What is the length of your rectangle?");
+      Console.WriteLine("How many miles have you travled?");
 
-      int width = Console.ReadLine("What is the width of your rectangle?");
+      double miles = Convert.ToDouble(Console.ReadLine());
 
-      int Area = length * width;
+      Console.WriteLine("How many gallons of gas have you used?");
 
-      Console.WriteLine("Tada, here is you area:", area);
+      double gas = Convert.ToDouble(Console.ReadLine());
+
+      double MPG = miles / gas;
+
+      Console.WriteLine("Your miles-per-gallon is: " + MPG);
     }
-  }
-
-namespace CsharpConsle
-
-  {
-    private static void GasForLess()
-    {
-      float miles = Console.ReadLine("How far have you driven in mile?");
-
-      float gas = Console.ReadLine("How much gas have you used in gallons?");
-
-      float MPG = miles / gas;
-
-      Console.WriteLine("Your miles-per-gallon is:", MPG);
-    }
-  }
 
 
-namespace CsharpConsle
 
-  {
     private static void AliceRead()
       {
         string search;
@@ -122,4 +118,4 @@ namespace CsharpConsle
         
       }
     }
-}
+  }
